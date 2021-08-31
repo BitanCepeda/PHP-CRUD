@@ -23,7 +23,7 @@ class medicoServicio
 			$opcion=$opcion+1;}
 		}
 		
-		if(opcion==0)
+		if($opcion==0)
 		{
 		$medico = new persona();
 		$medico->primerNombre = $primerN;
@@ -53,26 +53,31 @@ class medicoServicio
 				$opcion=1;}
 		}
 		
-		if($opcion!=0){
+		if($opcion==0){
 		echo "No se encuentra un medico para editar con el documento ingresado";}
 		
 	}
 	
 	public function ver($numero)
 	{
+		echo "\n<br>";
+		echo "\n<br>MOSTRAR UN MÉDICO";
 		$opcion=0;
 		foreach ($this->medicoList as $medic){
 			if($medic->numeroDocumento==$numero){
-				echo $medic->primerNombre;
-				echo $medic->segundoNombre;
-				echo $medic->primerApellido;
-				echo $medic->segundoApellido;
-				echo $medic->tipoDocumento;
-				echo $medic->fechaExpeDoc;
+				echo "\n<br>";
+				echo $medic->primerNombre;"\n";
+				echo $medic->segundoNombre;"\n";
+				echo $medic->primerApellido;"\n";
+				echo $medic->segundoApellido;"\n";
+				echo $medic->tipoDocumento;"\n";
+				echo $medic->numeroDocumento;"\n";
+				echo $medic->fechaExpeDoc;"\n";
+				echo "\n<br>";
 				$opcion=1;}
 		}
 		
-		if($opcion!=0){
+		if($opcion==0){
 		echo "No se encuentra un medico para mostrar con el documento ingresado";}
 	}
 	
@@ -90,6 +95,7 @@ class medicoServicio
 			echo $medic->primerApellido;echo "\n";
 			echo $medic->segundoApellido;echo "\n";
 			echo $medic->tipoDocumento;echo "\n";
+			echo $medic->numeroDocumento;echo "\n";
 			echo $medic->fechaExpeDoc;echo "\n";
 			echo "\n<br>";
 		}
@@ -97,17 +103,7 @@ class medicoServicio
 	}
 	
 	
-	public function eliminar($numero)
-	{
-		$opcion=0;
-		
-		if(array_key_exists($numero, $this->medicoList))
-		{
-			unset($this->medicoList[$numero]);
-		}
-		else{
-		echo "No se encuentra un medico para eliminar con el documento ingresado";}		
-	}
+
 	
 	
 	

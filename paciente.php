@@ -23,7 +23,7 @@ class pacienteServicio
 				$opcion=$opcion+1;}
 		}
 		
-		if(opcion==0)
+		if($opcion==0)
 		{
 		$paciente = new persona();
 		$paciente->primerNombre = $primerN;
@@ -53,26 +53,31 @@ class pacienteServicio
 				$opcion=1;}
 		}
 		
-		if($opcion!=0){
+		if($opcion==0){
 		echo "No se encuentra un paciente para editar con el documento ingresado";}
 		
 	}
 	
 	public function ver($numero)
 	{
+		echo "\n<br>";
+		echo "\n<br>MOSTRAR UN PACIENTE";
 		$opcion=0;
 		foreach ($this->pacienteList as $pacient){
 			if($pacient->numeroDocumento==$numero){
-				echo $pacient->primerNombre;
-				echo $pacient->segundoNombre;
-				echo $pacient->primerApellido;
-				echo $pacient->segundoApellido;
-				echo $pacient->tipoDocumento;
-				echo $pacient->fechaExpeDoc;
+				echo "\n<br>";
+				echo $pacient->primerNombre;echo "\n";
+				echo $pacient->segundoNombre;echo "\n";
+				echo $pacient->primerApellido;echo "\n";
+				echo $pacient->segundoApellido;echo "\n";
+				echo $pacient->tipoDocumento;echo "\n";
+				echo $pacient->numeroDocumento;echo "\n";
+				echo $pacient->fechaExpeDoc;echo "\n";
+				echo "\n<br>";
 				$opcion=1;}
 		}
 		
-		if($opcion!=0){
+		if($opcion==0){
 		echo "No se encuentra un paciente para mostrar con el documento ingresado";}
 	}
 	
@@ -98,17 +103,7 @@ class pacienteServicio
 	}
 	
 	
-	public function eliminar($numero)
-	{
-		$opcion=0;
-		
-		if(array_key_exists($numero, $this->pacienteList))
-		{
-			unset($this->pacienteList[$numero]);
-		}
-		else{
-		echo "No se encuentra un paciente para eliminar con el documento ingresado";}	
-	}
+
 	
 	
 	
