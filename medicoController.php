@@ -15,6 +15,9 @@ $medico->registrar("CARLOS", "MARIO", "PABA2", "RODRIGUEZ", "TI", "1010101010", 
 //editar médico
 $medico->editar("1010101010", "A", "B", "C", "D", "PP", "20/12/20");
 
+//eliminar paciente
+$medico->eliminar("1111111111");
+
 //ver médico
 $medico->ver("1010101010");
 

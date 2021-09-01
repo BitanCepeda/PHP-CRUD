@@ -103,6 +103,25 @@ class pacienteServicio
 	}
 	
 	
+	
+	public function eliminar($numero)
+	{
+		echo "\n<br>";
+		echo "\n<br>ELIMINAR UN PACIENTE";
+		$opcion=0;
+		foreach ($this->pacienteList as $key => $pacient){
+			if($pacient->numeroDocumento==$numero){
+				unset($this->pacienteList[$key]);
+				$opcion=1;}
+		}
+		
+		if($opcion==0){
+		echo "No se encuentra un paciente para eliminar con el documento ingresado";}
+	}
+	
+	
+	
+	
 
 	
 	

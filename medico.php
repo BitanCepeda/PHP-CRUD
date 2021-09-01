@@ -102,6 +102,22 @@ class medicoServicio
 		
 	}
 	
+	public function eliminar($numero)
+	{
+		echo "\n<br>";
+		echo "\n<br>ELIMINAR UN MÉDICO";
+		$opcion=0;
+		foreach ($this->medicoList as $key => $medic){
+			if($medic->numeroDocumento==$numero){
+				unset($this->medicoList[$key]);
+				$opcion=1;}
+		}
+		
+		if($opcion==0){
+		echo "No se encuentra un medico para eliminar con el documento ingresado";}
+	}
+	
+	
 	
 
 	
